@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ブラウザで遊べるテトリス</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Web Tetris</p>
+        <h1>ブラウザで遊べるテトリス</h1>
+        <p class="lead">
+          キーボード操作とタッチボタンに対応した、軽量なテトリスゲームです。
+        </p>
+      </section>
+
+      <section class="game-layout" aria-label="テトリスゲーム">
+        <div class="board-panel">
+          <canvas id="board" width="300" height="600" aria-label="ゲーム盤面"></canvas>
+          <div id="overlay" class="overlay">
+            <div>
+              <h2 id="overlay-title">TETRIS</h2>
+              <p id="overlay-text">スタートボタンで開始</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="card next-card">
+            <h2>次のミノ</h2>
+            <canvas id="next" width="120" height="120" aria-label="次のミノ"></canvas>
+          </div>
+
+          <div class="card stats">
+            <div><span>スコア</span><strong id="score">0</strong></div>
+            <div><span>ライン</span><strong id="lines">0</strong></div>
+            <div><span>レベル</span><strong id="level">1</strong></div>
+          </div>
+
+          <div class="actions">
+            <button id="start-button" type="button">スタート</button>
+            <button id="pause-button" type="button">一時停止</button>
+          </div>
+
+          <div class="card controls">
+            <h2>操作方法</h2>
+            <ul>
+              <li>← / →：左右移動</li>
+              <li>↓：ソフトドロップ</li>
+              <li>↑ / X：回転</li>
+              <li>Space：ハードドロップ</li>
+              <li>P：一時停止</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="touch-controls" aria-label="タッチ操作">
+        <button data-action="left" type="button">←</button>
+        <button data-action="rotate" type="button">回転</button>
+        <button data-action="right" type="button">→</button>
+        <button data-action="down" type="button">↓</button>
+        <button data-action="drop" type="button">落下</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
